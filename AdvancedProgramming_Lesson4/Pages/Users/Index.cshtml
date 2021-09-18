@@ -1,0 +1,41 @@
+﻿@page
+@model AdvancedProgramming_Lesson4.Pages.Users.IndexModel
+
+@{
+    ViewData["Title"] = "Users";
+}
+
+<h1>Users</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserList[0].UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserList[0].NormalizedUserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserList[0].Email)
+            </th>
+            </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.UserList) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NormalizedUserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+
+        </tr>
+}
+    </tbody>
+</table>
